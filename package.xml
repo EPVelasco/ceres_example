@@ -3,6 +3,10 @@
   <name>ceres_example</name>
   <version>0.0.0</version>
 
+  <description>
+    Ceres_ Example
+  </description>
+
 <maintainer email="edison.velasco@ua.es">EPVS</maintainer>
 
   <license>BSD</license>
