@@ -34,7 +34,7 @@ find_package(Ceres REQUIRED)
 
 
 include_directories(
-  
+  include
   ${catkin_INCLUDE_DIRS} 
   ${PCL_INCLUDE_DIRS}
   ${CERES_INCLUDE_DIRS}
@@ -42,7 +42,7 @@ include_directories(
 )
 
 link_directories(
-
+  include
   ${PCL_LIBRARY_DIRS}
   ${CERES_LIBRARY_DIRS}
 )
