@@ -29,31 +29,35 @@ else()
   set(EIGEN3_INCLUDE_DIRS ${EIGEN3_INCLUDE_DIR})
 endif()
 
-find_package(PCL REQUIRED)
+#find_package(PCL REQUIRED)
 find_package(Ceres REQUIRED)
 
 
 include_directories(
   include
   ${catkin_INCLUDE_DIRS} 
-  ${PCL_INCLUDE_DIRS}
+  #${PCL_INCLUDE_DIRS}
   ${CERES_INCLUDE_DIRS}
   ${EIGEN3_INCLUDE_DIRS}
 )
 
 link_directories(
   include
-  ${PCL_LIBRARY_DIRS}
+  #${PCL_LIBRARY_DIRS}
   ${CERES_LIBRARY_DIRS}
 )
 
 catkin_package(
   CATKIN_DEPENDS geometry_msgs nav_msgs roscpp rospy std_msgs
-  DEPENDS EIGEN3 PCL Ceres 
+  DEPENDS EIGEN3 Ceres 
+  #DEPENDS EIGEN3 PCL Ceres 
   INCLUDE_DIRS include
 )
 
-add_executable(opti_node src/opti_ceres.cpp)
-target_link_libraries(opti_node ${EIGEN3_LIBRARIES} ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${CERES_LIBRARIES})
+#add_executable(opti_node src/opti_ceres.cpp)
+#target_link_libraries(opti_node ${EIGEN3_LIBRARIES} ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${CERES_LIBRARIES})
 
+add_executable(bunny_node src/bunny.cpp)
+#target_link_libraries(bunny_node ${EIGEN3_LIBRARIES} ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${CERES_LIBRARIES})
+target_link_libraries(bunny_node ${EIGEN3_LIBRARIES} ${catkin_LIBRARIES} ${CERES_LIBRARIES})
 
