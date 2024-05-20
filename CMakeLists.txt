@@ -53,7 +53,15 @@ catkin_package(
   INCLUDE_DIRS include
 )
 
-add_executable(opti_node src/opti_ceres.cpp)
-target_link_libraries(opti_node ${EIGEN3_LIBRARIES} ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${CERES_LIBRARIES})
+#add_executable(opti_node src/opti_ceres.cpp)
+#target_link_libraries(opti_node ${EIGEN3_LIBRARIES} ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${CERES_LIBRARIES})
+
+add_executable(bunny_node src/bunny.cpp)
+target_link_libraries(bunny_node ${EIGEN3_LIBRARIES} ${catkin_LIBRARIES} ${CERES_LIBRARIES})
+
+add_executable(udq_bunny_node src/bunny_UDQ.cpp)
+target_link_libraries(udq_bunny_node ${EIGEN3_LIBRARIES} ${catkin_LIBRARIES} ${CERES_LIBRARIES})
 
 
+add_executable(pcl_map_node src/pcl_map_diff.cpp)
+target_link_libraries(pcl_map_node ${EIGEN3_LIBRARIES} ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${CERES_LIBRARIES})

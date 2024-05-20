@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+
+    <param name="childframeID_std" type="str" value="velodyne" /> 
+   
+    <!-- <node pkg="tf" type="static_transform_publisher" name="word2odom_std_tf"  args="0 0 0 0 0 0 /map /odom_std 10" /> -->
+    <node pkg="ceres_example" type="pcl_map_node" name="pcl_map_node" output="screen"/>
+
+    <node pkg="hector_trajectory_server" type="hector_trajectory_server" name="trajectory_std_diff" ns="std_diff" >
+        <param name="/target_frame_name" value="odom_std" />
+        <param name="/source_frame_name" value="velodyne" />
+        <param name="/trajectory_update_rate" value="100.0" />
+        <param name="/trajectory_publish_rate" value="100.0" />
+
+  </node> 
+
+</launch>
+
+

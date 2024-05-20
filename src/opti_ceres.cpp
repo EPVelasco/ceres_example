@@ -85,7 +85,7 @@ int main() {
     options.max_num_iterations = 6;
     options.gradient_check_relative_precision = 1e-4;
 
-    ceres::LocalParameterization* quaternion_parameterization = new ceres::EigenQuaternionParameterization;
+    ceres::Manifold* quaternion_parameterization = new ceres::EigenQuaternionManifold;
     problem.AddParameterBlock(quaternion.coeffs().data(), 4, quaternion_parameterization);
 
     // Resolver el problema de optimización
